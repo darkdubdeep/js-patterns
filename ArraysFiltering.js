@@ -53,7 +53,7 @@ for (var i = 0, len = accounts.length; i < len; i++) {
   altArray = filteredAccounts;
 }
 
-// FLITERING ARRAY BY SPECIAL NAME
+// FLITERING ARRAY BY ONE PROPERTY
 
 var sidekicks = [
   {
@@ -83,10 +83,14 @@ for (var i = 0; i < sidekicks.length; i++) {
   }
 }
 
-// with filter function
+// modern variant
 
-var batKicks = sidekicks.filter(function(el) {
-  return el.hero === "Batman";
+let batKicks = cart.filter(obj => obj.name === "Batman");
+
+// variant for old browsers
+
+var batKicks = sidekicks.filter(function(obj) {
+  return el.obj === "Batman";
 });
 
 // combining filter with map function for extracting some parameters
@@ -101,6 +105,48 @@ var sortedBatKickNames = sidekicks
   .sort();
 
 // Outputs: ["Oracle", "Robin"];
+
+// FILTERING OBJECTS ARRAY BY MYLTIPLE PROPERTY
+
+var cart = [
+  {
+    name: "Drink",
+    price: 3.12
+  },
+  {
+    name: "Steak",
+    price: 45.15
+  },
+  {
+    name: "Drink",
+    price: 11.01
+  }
+];
+
+// modern variant
+
+let expensiveDrinkOrders = cart.filter(x => x.name === "Drink" && x.price > 10);
+
+// [{ name: "Drink", price: 11.01 }]
+
+// modern variant
+
+let expensiveDrinkOrders = cart
+  .filter(x => x.name === "Drink")
+  .filter(x => x.price > 10);
+
+// [{ name: "Drink", price: 11.01 }]
+
+// modern variant
+
+const drinksGreaterThan10 = obj => obj.name === "Drink" && obj.price > 10;
+let result = cart.filter(drinksGreaterThan10);
+
+// variant for old browsers
+var expensiveDrinkOrders = cart.filter(function(x) {
+  return x.name === "Drink" && x.price > 10;
+});
+// [{ name: "Drink", price: 11.01 }]
 
 // FILTERING ARRAY BY NUMBER HIGHER THAN 500000000
 
