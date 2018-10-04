@@ -1,0 +1,7 @@
+{
+    "editor.tokenColorCustomizations": {
+        "comments": "#53D5D1",
+        "variables": "#e6ffe6",
+    },
+    "editor.formatOnSave": true
+}
