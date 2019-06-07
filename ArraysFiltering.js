@@ -3,19 +3,19 @@
 var accounts = [
   {
     Domhoz: 12151511,
-    Zone: "Д"
+    Zone: 'Д'
   },
   {
     Domhoz: 12151511,
-    Zone: "Н"
+    Zone: 'Н'
   },
   {
     Domhoz: 1215155,
-    Zone: "Д"
+    Zone: 'Д'
   },
   {
     Domhoz: 1215155,
-    Zone: "Н"
+    Zone: 'Н'
   }
 ];
 
@@ -48,7 +48,7 @@ var filteredAccounts;
 var altArray = [];
 for (var i = 0, len = accounts.length; i < len; i++) {
   filteredAccounts = accounts.filter(function(i) {
-    return i.Zone === "Д";
+    return i.Zone === 'Д';
   });
   altArray = filteredAccounts;
 }
@@ -57,20 +57,20 @@ for (var i = 0, len = accounts.length; i < len; i++) {
 
 var sidekicks = [
   {
-    name: "Robin",
-    hero: "Batman"
+    name: 'Robin',
+    hero: 'Batman'
   },
   {
-    name: "Supergirl",
-    hero: "Superman"
+    name: 'Supergirl',
+    hero: 'Superman'
   },
   {
-    name: "Oracle",
-    hero: "Batman"
+    name: 'Oracle',
+    hero: 'Batman'
   },
   {
-    name: "Krypto",
-    hero: "Superman"
+    name: 'Krypto',
+    hero: 'Superman'
   }
 ];
 
@@ -78,26 +78,26 @@ var sidekicks = [
 
 var batKicks = [];
 for (var i = 0; i < sidekicks.length; i++) {
-  if (sidekicks[i].hero === "Batman") {
+  if (sidekicks[i].hero === 'Batman') {
     batKicks.push(sidekicks[i]);
   }
 }
 
 // modern variant
 
-let batKicks = cart.filter(obj => obj.name === "Batman");
+let batKicks = cart.filter(obj => obj.name === 'Batman');
 
 // variant for old browsers
 
 var batKicks = sidekicks.filter(function(obj) {
-  return el.obj === "Batman";
+  return el.obj === 'Batman';
 });
 
 // combining filter with map function for extracting some parameters
 
 var sortedBatKickNames = sidekicks
   .filter(function(el) {
-    return el.hero === "Batman";
+    return el.hero === 'Batman';
   })
   .map(function(el) {
     return el.name;
@@ -110,41 +110,41 @@ var sortedBatKickNames = sidekicks
 
 var cart = [
   {
-    name: "Drink",
+    name: 'Drink',
     price: 3.12
   },
   {
-    name: "Steak",
+    name: 'Steak',
     price: 45.15
   },
   {
-    name: "Drink",
+    name: 'Drink',
     price: 11.01
   }
 ];
 
 // modern variant
 
-let expensiveDrinkOrders = cart.filter(x => x.name === "Drink" && x.price > 10);
+let expensiveDrinkOrders = cart.filter(x => x.name === 'Drink' && x.price > 10);
 
 // [{ name: "Drink", price: 11.01 }]
 
 // modern variant
 
 let expensiveDrinkOrders = cart
-  .filter(x => x.name === "Drink")
+  .filter(x => x.name === 'Drink')
   .filter(x => x.price > 10);
 
 // [{ name: "Drink", price: 11.01 }]
 
 // modern variant
 
-const drinksGreaterThan10 = obj => obj.name === "Drink" && obj.price > 10;
+const drinksGreaterThan10 = obj => obj.name === 'Drink' && obj.price > 10;
 let result = cart.filter(drinksGreaterThan10);
 
 // variant for old browsers
 var expensiveDrinkOrders = cart.filter(function(x) {
-  return x.name === "Drink" && x.price > 10;
+  return x.name === 'Drink' && x.price > 10;
 });
 // [{ name: "Drink", price: 11.01 }]
 
@@ -152,19 +152,19 @@ var expensiveDrinkOrders = cart.filter(function(x) {
 
 let data = [
   {
-    country: "China",
+    country: 'China',
     population: 1409517397
   },
   {
-    country: "India",
+    country: 'India',
     population: 1339180127
   },
   {
-    country: "USA",
+    country: 'USA',
     population: 324459463
   },
   {
-    country: "Indonesia",
+    country: 'Indonesia',
     population: 263991379
   }
 ];
@@ -184,3 +184,26 @@ let cities = data.filter(val => val.population > 500000000);
 var cities = data.filter(function(val) {
   return val.population > 500000000;
 });
+
+let goods = [
+  {
+    name: 'dress',
+    isFavorite: false
+  },
+  {
+    name: 'socks',
+    isFavorite: true
+  },
+  {
+    name: 'shoes',
+    isFavorite: false
+  }
+];
+
+let favoriteGoods = [];
+
+for (let item of goods) {
+  if (item.isFavorite) {
+    favoriteGoods.push(item);
+  }
+}
